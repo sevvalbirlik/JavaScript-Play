@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devide-width, initial-scale=1">
+    <title>Şevval Birlik</title>
+</head>
+<body>
+    <!-- BU KISIM SAYAÇTA KULLANACAĞIMIZ ELEMANLARIN KISMI / HTML  -->
+    <div class="container">
+        <p class="counter" id="counter">0</p>
+        <button class="incr">+</button>
+        <button class="decr">-</button>
+    </div>
+
+    <!--BU KISIM DA SAYACIMIZA VERMİŞ OLDUĞUMUZ CSS TASARIMI-->
+
+<style>
+        .container {
+    width: 180px;
+    height: 180px;
+    background-color: #951551;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 200px;
+    left: 45%;
+    border-radius: 20px;
+}
+
+        .counter {
+
+    font-size: 4rem;
+    font-family: sans-serif;
+
+}
+
+
+        button {
+    width: 33px;
+    height: 33px;
+
+position: absolute;
+cursor: pointer;
+font-size: 1,2em;
+background: white;
+color: rgb(34,34,34);
+box-shadow: 0 0 10px rgb(51,51,51,0,150);
+border: none;
+border-radius: 40px;
+  
+}
+
+        .decr {
+    bottom: 2%;
+    right: 20%;
+
+}
+
+        .incr {
+    bottom: 10%;
+    right: 2%;
+    }
+</style>
+
+  <!-- BU KISIM SAYACIMIZIN ÇALIŞMASINI SAĞLAYAN JAVASCRİPT KISMI -->
+<script>
+    let counter = document.getElementById('counter');
+    let incr = document.querySelector('.incr');
+    let decr = document.querySelector('.decr');
+
+    let count = 0 ;
+    incr.addEventListener("click", ()=>{
+        count ++ ;
+        updateDisplay();});
+
+        decr.addEventListener("click", ()=>{
+        count -- ;
+        updateDisplay();});
+
+        function updateDisplay (){
+        counter.innerHTML = count;
+        };
+</script>
+</body>
+</html>

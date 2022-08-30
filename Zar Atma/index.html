@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Şevval Birlik</title>
+    </head>
+    <body>
+        <div class="panel">
+            <div class="zarlar">
+            <img src="png/001-dice.png" alt="zar 1" class="zar">
+            <img src="png/002-dice.png" alt="zar 2" class="zar">
+            </div>
+
+        <div class="btn-panel">
+            <button id="zarAt" class="button-19">Zar At</button>
+        </div>
+        </div>
+
+    </body>
+
+
+
+    <!-- ZAR ATMA OYUNU TASARIM KISMI (CSS)-->
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: #242323;
+        }
+
+        .panel {
+            margin: 5rem auto;
+            width: 50rem;
+            background-color: #fbe7e7;
+        }
+
+        .zarlar {
+            height: 30rem;
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .zarlar img {
+            width: 40%;
+        }
+
+        #zarAt {
+            
+        }
+
+        .btn-panel {
+            text-align: center;
+            padding: 5rem;
+        }
+
+        .button-19 {
+            appearance: button;
+            background-color: #612308;
+            border: solid transparent;
+            border-radius: 16px;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            line-height: 20px;
+            padding: 13px 16px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: filter .2s;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .button-19:hover:not(:disabled) {
+            filter: brightness(1.2);
+        }
+    </style>
+
+
+<!-- JAVASCRİPT İLE BUTONLARIN ÇALIŞMASI -->
+<script>
+    const liste =[
+        "png/001-dice.png",
+        "png/002-dice.png",
+        "png/003-dice.png",
+        "png/004-dice.png",
+        "png/005-dice.png",
+        "png/006-dice.png",
+]
+ document.querySelector("#zarAt").onclick=function(){
+    let uzunluk = liste.length;
+    let zar1 = liste[Math.floor(Math.random()*uzunluk)];
+    let zar2 = liste[Math.floor(Math.random()*uzunluk)];
+    document.querySelectorAll(".zar")[0].src=zar1;
+    document.querySelectorAll(".zar")[1].src=zar2;
+ }
+</script>
+</html>
